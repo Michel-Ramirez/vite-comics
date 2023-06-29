@@ -20,11 +20,27 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <AppHeader />
-    <AppMain />
-    <AppFooter />
-  </div>
+  <AppHeader />
+  <AppMain />
+  <AppFooter />
 </template>
 
-<style></style>
+<style>
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+</style>
