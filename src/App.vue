@@ -4,7 +4,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import "@fontsource/open-sans/400.css";
-import "@fontsource/open-sans-condensed/400.css";
+import "@fontsource/open-sans-condensed/700.css"; s
 
 
 export default {
@@ -29,7 +29,8 @@ export default {
 
 <style>
 body {
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Open Sans Condensed';
+  font-weight: 700;
 }
 
 .wrapper {
