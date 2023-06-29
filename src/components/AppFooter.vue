@@ -11,7 +11,7 @@ export default {
                 {
                     text: 'Comics',
                     url: '#',
-                    visited: false,
+                    visited: true,
                 },
                 {
                     text: 'Movies',
@@ -149,24 +149,32 @@ export default {
                     <div class="col-left">
                         <h4>DC COMICS</h4>
                         <ul>
-                            <li v-for="link in linksComics">{{ link.text }}</li>
+                            <li v-for="link in linksComics">
+                                <a :href="link.url" :class="{ visited: link.visited }"> {{ link.text }}</a>
+                            </li>
                         </ul>
 
                         <h4>SHOP</h4>
                         <ul>
-                            <li v-for="link in linksShop">{{ link.text }}</li>
+                            <li v-for="link in linksShop" :class="{ visited: visited }">
+                                <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-center">
                         <h4>DC</h4>
                         <ul>
-                            <li v-for="link in linksDC">{{ link.text }}</li>
+                            <li v-for="link in linksDC">
+                                <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-right">
                         <h4>SITE</h4>
                         <ul>
-                            <li v-for="link in linksSite">{{ link.text }}</li>
+                            <li v-for="link in linksSite">
+                                <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -222,8 +230,12 @@ ul {
     padding-inline-start: 0;
 }
 
-li {
+a {
     color: gray;
     font-size: 0.8rem;
+}
+
+.visited {
+    color: darkblue
 }
 </style>
