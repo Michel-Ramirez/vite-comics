@@ -5,7 +5,7 @@ export default {
             items: [
                 {
                     thumb:
-                        'https://imgs.search.brave.com/aUNyvZBXUulb963JH7KnQm9AMr8bcBoLsiHREOqayIU/rs:fit:612:612:1/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvOWZm/ZWYzMDMtMGZhYy00/OGRkLTg3ODctYzUy/NTk0MDk2ODAwXzEu/MTc1ZDk1Mjg2NzY0/OGEwOTczMTY2NGMy/MTE1NjNlYWIuanBl/Zz9vZG5XaWR0aD02/MTImb2RuSGVpZ2h0/PTYxMiZvZG5CZz1m/ZmZmZmY',
+                        'https://m.media-amazon.com/images/I/91ytkCTqkEL._AC_UF350,350_QL50_.jpg',
                     price: '$19.99',
                     series: 'Action Comics',
                     type: 'comic book',
@@ -98,17 +98,18 @@ export default {
         <div class="jumbotron">
         </div>
         <div class="main-content">
-            <ul>
-                <li v-for="item in items" :key="item.thumb">
-                    <a href="#">
-                        <figure>
-                            <img :src="item.thumb" :alt="item.series">
-                        </figure>
-                        <div>{{ item.series }}</div>
-                    </a>
-
-                </li>
-            </ul>
+            <div class="wrapper">
+                <ul>
+                    <li v-for="item in items" :key="item.thumb">
+                        <a href="#">
+                            <figure>
+                                <img :src="item.thumb" :alt="item.series">
+                            </figure>
+                            <div class="title">{{ item.series }}</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </main>
 </template>
@@ -118,25 +119,42 @@ export default {
 
 .main-content {
     background-color: $black;
+    height: 500px;
 
     figure {
-        width: 100px;
-        height: 100px;
+        height: 150px;
+        width: 150px;
     }
 
     ul {
+        height: 100%;
+        width: 60%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
+
+        li {
+            width: calc(100% / 6 - 40px);
+            margin: 0 20px;
+        }
     }
 
     img {
         object-fit: cover;
+        object-position: center top;
         height: 100%;
+        width: 100%;
+        display: block;
     }
 }
 
+.title {
+    color: $white;
+}
+
 .jumbotron {
-    height: 250px;
+    height: 600px;
     background-image: url('/img/jumbotron.jpg');
     background-size: cover;
 }
