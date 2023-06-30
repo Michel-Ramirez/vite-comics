@@ -63,7 +63,7 @@ export default {
     <header class="wrapper">
         <div class="logo">
             <figure>
-                <img src="../../public/img/dc-logo.png" alt="Logo DC">
+                <img src="/img/dc-logo.png" alt="Logo DC">
             </figure>
         </div>
         <div class="menu">
@@ -77,6 +77,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/scss/vars' as *;
+
 header {
     height: 120px;
     width: 100%;
@@ -111,6 +113,6 @@ a {
 }
 
 .active {
-    border-bottom: 4px solid #0282F9;
+    border-bottom: 4px solid $light-blue;
 }
 </style>

@@ -9,14 +9,16 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '../assets/scss/vars' as *;
+
 .main-content {
     height: 150px;
-    background-color: black;
+    background-color: $black;
 }
 
 h1 {
-    color: white;
+    color: $white;
 }
 
 .wrapper {

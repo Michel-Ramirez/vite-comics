@@ -1,0 +1,16 @@
+@use './reset';
+
+body {
+  font-family: 'Open Sans Condensed';
+  font-weight: 700;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

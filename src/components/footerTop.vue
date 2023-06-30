@@ -46,9 +46,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../assets/scss/vars' as *;
+
 .head-footer {
     height: 150px;
-    background-color: #0282F9;
+    background-color: $light-blue;
 }
 
 img {
@@ -61,7 +63,7 @@ ul li:last-child img {
 }
 
 li a {
-    color: white;
+    color: $white;
 }
 
 ul {

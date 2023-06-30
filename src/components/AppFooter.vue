@@ -1,4 +1,6 @@
 <script>
+import footerTop from './footerTop.vue';
+import footerBottom from './footerBottom.vue';
 export default {
     data() {
         return {
@@ -137,55 +139,66 @@ export default {
                 },
             ]
         }
+    },
+    components: {
+        footerBottom,
+        footerTop,
     }
 }
 </script>
 
 <template>
     <footer>
-        <div class="wrapper">
-            <div class="nav-site">
-                <div class="wrapper-col">
-                    <div class="col-left">
-                        <h4>DC COMICS</h4>
-                        <ul>
-                            <li v-for="link in linksComics">
-                                <a :href="link.url" :class="{ visited: link.visited }"> {{ link.text }}</a>
-                            </li>
-                        </ul>
+        <footerTop />
+        <div class="main-footer">
+            <div class="wrapper">
+                <div class="nav-site">
+                    <div class="wrapper-col">
+                        <div class="col-left">
+                            <h4>DC COMICS</h4>
+                            <ul>
+                                <li v-for="link in linksComics">
+                                    <a :href="link.url" :class="{ visited: link.visited }"> {{ link.text }}</a>
+                                </li>
+                            </ul>
 
-                        <h4>SHOP</h4>
-                        <ul>
-                            <li v-for="link in linksShop" :class="{ visited: visited }">
-                                <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-center">
-                        <h4>DC</h4>
-                        <ul>
-                            <li v-for="link in linksDC">
-                                <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-right">
-                        <h4>SITE</h4>
-                        <ul>
-                            <li v-for="link in linksSite">
-                                <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
-                            </li>
-                        </ul>
+                            <h4>SHOP</h4>
+                            <ul>
+                                <li v-for="link in linksShop" :class="{ visited: visited }">
+                                    <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-center">
+                            <h4>DC</h4>
+                            <ul>
+                                <li v-for="link in linksDC">
+                                    <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-right">
+                            <h4>SITE</h4>
+                            <ul>
+                                <li v-for="link in linksSite">
+                                    <a :href="link.url" :class="{ visited: visited }">{{ link.text }}</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="logo-bg"></div>
             </div>
-            <div class="logo-bg"></div>
         </div>
+        <footerBottom />
     </footer>
 </template>
 
 <style lang="scss" scoped>
-footer {
+@use '../assets/scss/vars' as *;
+
+
+.main-footer {
     height: 500px;
     background-image: url('/img/footer-bg.jpg');
     background-size: cover;
@@ -222,7 +235,7 @@ footer {
 }
 
 h4 {
-    color: white;
+    color: $white;
     font-size: 1.2rem;
 }
 
@@ -231,11 +244,11 @@ ul {
 }
 
 a {
-    color: gray;
+    color: $gray;
     font-size: 0.8rem;
 }
 
 .visited {
-    color: darkblue
+    color: $dark-blue;
 }
 </style>

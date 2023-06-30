@@ -3,8 +3,6 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
-import AppHeadFooter from './components/AppHeadFooter.vue';
-import AppFooterBottom from './components/AppFooterBottom.vue';
 import "@fontsource/open-sans/400.css";
 import "@fontsource/open-sans-condensed/700.css";
 
@@ -18,9 +16,7 @@ export default {
   components: {
     AppHeader,
     AppMain,
-    AppHeadFooter,
     AppFooter,
-    AppFooterBottom,
   }
 }
 </script>
@@ -28,28 +24,9 @@ export default {
 <template>
   <AppHeader />
   <AppMain />
-  <AppHeadFooter />
   <AppFooter />
-  <AppFooterBottom />
 </template>
 
-<style>
-body {
-  font-family: 'Open Sans Condensed';
-  font-weight: 700;
-}
-
-.wrapper {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
+<style lang="scss">
+@use './assets/scss/style.scss';
 </style>

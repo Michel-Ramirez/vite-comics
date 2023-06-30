@@ -35,7 +35,7 @@ export default {
 </script>
 
 <template>
-    <footer>
+    <div class="bottom-footer">
         <div class="wrapper">
             <button>SING-UP NOW!</button>
             <div class="socials">
@@ -49,13 +49,15 @@ export default {
                 </ul>
             </div>
         </div>
-    </footer>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-footer {
+@use '../assets/scss/vars' as *;
+
+.bottom-footer {
     height: 100px;
-    background-color: #303030;
+    background-color: $deep-gray;
 }
 
 .wrapper {
@@ -67,14 +69,14 @@ footer {
 
 button {
     padding: 10px;
-    border: 1px solid #0282F9;
-    background-color: #303030;
-    color: white;
+    border: 1px solid $light-blue;
+    background-color: $deep-gray;
+    color: $white;
 }
 
 .socials span {
     font-size: 1.5rem;
-    color: #0282F9;
+    color: $light-blue;
 }
 
 .socials,
