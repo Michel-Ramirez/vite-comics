@@ -106,11 +106,11 @@ ul {
 }
 
 a {
-    padding: 50px 0;
+    padding: 47px 0;
 
 }
 
 .active {
-    border-bottom: 2px solid #0282F9;
+    border-bottom: 4px solid #0282F9;
 }
 </style>

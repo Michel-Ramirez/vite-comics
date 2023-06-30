@@ -187,7 +187,7 @@ export default {
 <style lang="scss" scoped>
 footer {
     height: 500px;
-    background-image: url('../../public/img/footer-bg.jpg');
+    background-image: url('/img/footer-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -211,7 +211,7 @@ footer {
 
 .logo-bg {
     width: 60%;
-    background-image: url('../../public/img/dc-logo-bg.png');
+    background-image: url('/img/dc-logo-bg.png');
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;

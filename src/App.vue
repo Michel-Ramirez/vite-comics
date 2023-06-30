@@ -4,6 +4,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppHeadFooter from './components/AppHeadFooter.vue';
+import AppFooterBottom from './components/AppFooterBottom.vue';
 import "@fontsource/open-sans/400.css";
 import "@fontsource/open-sans-condensed/700.css";
 
@@ -19,6 +20,7 @@ export default {
     AppMain,
     AppHeadFooter,
     AppFooter,
+    AppFooterBottom,
   }
 }
 </script>
@@ -28,6 +30,7 @@ export default {
   <AppMain />
   <AppHeadFooter />
   <AppFooter />
+  <AppFooterBottom />
 </template>
 
 <style>
