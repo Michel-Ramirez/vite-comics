@@ -94,28 +94,50 @@ export default {
 </script>
 
 <template>
-    <div class="main-content">
-        <div class="wrapper">
-            <h1> --- Content goes here --- </h1>
+    <main>
+        <div class="jumbotron">
         </div>
-    </div>
+        <div class="main-content">
+            <ul>
+                <li v-for="item in items" :key="item.thumb">
+                    <a href="#">
+                        <figure>
+                            <img :src="item.thumb" :alt="item.series">
+                        </figure>
+                        <div>{{ item.series }}</div>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </main>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/scss/vars' as *;
 
 .main-content {
-    height: 150px;
     background-color: $black;
+
+    figure {
+        width: 100px;
+        height: 100px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
 }
 
-h1 {
-    color: $white;
-}
-
-.wrapper {
-    display: flex;
-    height: 100%;
-    align-items: center;
+.jumbotron {
+    height: 250px;
+    background-image: url('/img/jumbotron.jpg');
+    background-size: cover;
 }
 </style>
