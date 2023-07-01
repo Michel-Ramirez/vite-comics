@@ -97,7 +97,7 @@ export default {
     <main>
         <div class="jumbotron">
         </div>
-        <div class="main-content">
+        <div class="wrapper">
             <div class="cards">
                 <div class="banner">CURRENT SERIES</div>
                 <ul>
@@ -131,9 +131,9 @@ main {
     left: -5px;
 }
 
-.main-content {
-    height: 800px;
-    width: 800px;
+.wrapper {
+    height: 600px;
+
     margin: 0 auto;
     display: flex;
     justify-content: center;
