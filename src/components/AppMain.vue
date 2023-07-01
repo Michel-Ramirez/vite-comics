@@ -98,18 +98,18 @@ export default {
         <div class="jumbotron">
         </div>
         <div class="main-content">
-            <div class="wrapper">
+            <div class="cards">
+                <div class="banner">CURRENT SERIES</div>
                 <ul>
-                    <li v-for="item in items" :key="item.thumb">
-                        <a href="#">
-                            <figure>
-                                <img :src="item.thumb" :alt="item.series">
-                            </figure>
-                            <div class="title">{{ item.series }}</div>
-                        </a>
+                    <li v-for="item in items" :key="thumb">
+                        <div class="card">
+                            <img :src="item.thumb" :alt="item.series">
+                            <p class="series">{{ item.series }}</p>
+                        </div>
                     </li>
                 </ul>
             </div>
+            <button class="btn-more">LOAD MORE</button>
         </div>
     </main>
 </template>
@@ -117,45 +117,72 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/vars' as *;
 
-.main-content {
+main {
     background-color: $black;
-    height: 500px;
-
-    figure {
-        height: 150px;
-        width: 150px;
-    }
-
-    ul {
-        height: 100%;
-        width: 60%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-
-        li {
-            width: calc(100% / 6 - 40px);
-            margin: 0 20px;
-        }
-    }
-
-    img {
-        object-fit: cover;
-        object-position: center top;
-        height: 100%;
-        width: 100%;
-        display: block;
-    }
 }
 
-.title {
+.banner {
+    padding: 10px 40px;
+    background-color: $light-blue;
     color: $white;
+    display: inline-block;
+    position: absolute;
+    top: -20px;
+    left: -5px;
+}
+
+.main-content {
+    height: 800px;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .jumbotron {
     height: 600px;
     background-image: url('/img/jumbotron.jpg');
     background-size: cover;
+}
+
+.card {
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+
+    img {
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: left top;
+    }
+
+
+}
+
+.cards {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.series {
+    color: $white;
+}
+
+.btn-more {
+    background-color: $light-blue;
+    color: $white;
+    padding: 10px 40px;
+    margin-bottom: 20px;
+    border: 0;
 }
 </style>
